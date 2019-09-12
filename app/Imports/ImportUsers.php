@@ -20,21 +20,14 @@ class ImportUsers implements ToModel
             $row[8] = $row[7];
             $row[7] = 0;
         }
-        Session::put('row', $row);
-        dd(Session::get('row'));
-        if (!Session::get('row')[1])
-        {
-            dd(Session::get('row'));
-        } else {
-            return new User([
-                'name' => Session::get('row')[1],
-                'username' => Session::get('row')[2],
-                'email' => Session::get('row')[3],
-                'password' => Session::get('row')[5],
-                'admin' => Session::get('row')[7],
-            ]);
-        }
-        // Session::forget('row');
-        // dd($var);
+        // dd($row); Variables not nulled
+        return new User([
+            'name' => Session::get('row')[1],
+            'username' => Session::get('row')[2],
+            'email' => Session::get('row')[3],
+            'password' => Session::get('row')[5],
+            'admin' => Session::get('row')[7],
+        ]);
+        // dd($row); After returning data $row = nulled
     }
 }

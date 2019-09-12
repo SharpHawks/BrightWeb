@@ -14,7 +14,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/test', 'TestController@test');
 
 Route::match(['get', 'post'], '/admincp/login', 'Admin\LoginController@index')->name('adminLogin');
 
