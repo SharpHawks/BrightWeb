@@ -1,0 +1,7 @@
+.show i, .delete i {
+	color: white;
+}
+
+.show, .delete {
+	cursor: pointer;
+}
